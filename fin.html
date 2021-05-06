@@ -1,0 +1,182 @@
+
+
+<!-- 
+	new variables:
+		{CustomerTitle} exmple-> Herr / Frau / Firma
+		{leasingConditionMonths}
+		{LeasingConditionRateGross}
+		{CustomerType} privat or gewerbe / add option on admin dashboard
+	
+	unvisible variables:
+		{CustomerAdressline2}
+		{CustomerCountry}
+		{ShortDescription}
+		{TotalCreditInWords}
+	
+	footer istn't visible !important
+
+	wrong calculated variables:
+		{TotalVat} 
+		right way -> Kaufpreis / 119 * 19
+					 {TotalCredit} / 119 * 19
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style type="text/css">
+	@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700";
+		body{
+			font-family:"Open Sans",sans-serif,monospace;
+		}
+		
+		
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row" style="height:50px;">
+	
+	</div>
+</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				CheckCars24 GmbH
+			</div>
+			<div class="col-md-2" align="right">
+				<img src="https://sqlva4xc6f6d75d34c.blob.core.windows.net/assets/check-logo-colorful.png" alt="" style="width: 125px;height: auto;">
+			</div>
+		</div>
+		<div class="row" style="margin-top:10px;">
+			<div class="col-md-12" style="background-color: #e4e4e4;">
+				<div class="row">
+					<div class="col-md-6" >
+						<h2 style="margin: 0; font-weight:bold;">Verbindliche Bestellung</h1>
+						<h5 style="margin: 0; font-weight:bold;">eines neuen Kraftfahrzeuges</h3>
+					</div>
+					<div class="col-md-6" align="right">
+						<p style="margin: 0;">Interne Nr. {VehicleId}</p>
+						<p style="margin: 0;">{CustomerType}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top:14px;">
+			<div class="col-md-2">
+				<h5 style="margin: 0; font-weight:bold;">Verkäufer</h4>
+			</div>
+			<div class="col-md-10">
+				<address style="font-size:0.875rem;">
+					<b>CheckCars24 GmbH</b><br>
+					Mahlower Str. 235<br>
+					14513 Teltow<br>
+					Tel. +49(0)3328-3317277, Fax: +49(0)3328-3317272, Web: www.checkcars24.de, Mail:<br>
+					info@checkcars24.de, USt-IdNr. DE 306 73 47 03
+				</address>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<h5 style="font-weight:bold;">Käufer</h4>
+			</div>
+			<div class="col-md-10">
+				<address style="font-size:0.875rem;">
+					{CustomerTitle}<br>
+					{CustomerName}<br>
+					{CustomerAdressline2}<br>
+					{CustomerStreet}<br>
+					{CustomerPostalCode} {CustomerCity}, {CustomerCountry}, Tel. {CustomerPhone}, E-Mail: {CustomerEmail}<br>
+				</address>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p style="font-size: 0.875rem;">Der oben genannte Käufer kauft nach Maßgabe sowie Einsicht- und Kenntnisnahme der folgenden dem Kauf zugrunde
+			liegenden Allgemeinen Geschäftsbedingungen (AGB hier: https://checkcars24.de/agb-kfz-handel/) vom oben genannten
+			Verkäufer folgendes Fahrzeug:
+				</p>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="background-color: #E4E4E4;border: 1px solid #000;padding-top: 10px; padding-bottom: 10px;">
+				<h5 style="margin: 5px;font-weight:bold;">{ShortDescription}</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="border: 1px solid #000;margin-top: 5px; font-size:0.8125rem; padding-top: 10px; padding-bottom: 10px;">
+				<div class="row">
+					<div class="col-md-2">
+						<div>Aufbau</div>
+						<div>Leistung</div>
+						<div>Farbe</div>
+						<div>Getriebe</div>
+						<div>Hubraum</div>
+						<div>Kraftstoff</div>
+						<div>Landesversion</div>
+						<div>Km-Stand</div>
+					</div>
+					<div class="col-md-10">
+						<div><b>{BodyTypes}</b></div>
+						<div><b>{EnginePowerKw}</b></div>
+						<div><b>{ExteriorColorText}</b></div>
+						<div><b>{TransmissionType}</b></div>
+						<div><b>{EngineDisplacement} ccm</b></div>
+						<div><b>{FuelTypes}</b></div>
+						<div><b>EU - Mit Tageszulassung</b></div>
+						<div><b>{Mileage} km</b></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="border: 1px solid #000;margin-top: 5px; font-size: 0.8125rem;padding-top: 10px; padding-bottom: 10px;">
+				<b>Absprachen</b>
+				<p style="margin: 0;">{AgreementText1}</p>
+			</div>
+		</div>
+		<div class="row" style="border: 1px solid #000;margin-top: 5px; background-color:#e4e4e4; padding-top: 10px; padding-bottom: 10px;">
+			<div class="col-md-7" >
+
+				<div class="container">
+					<div class="row" style="margin-left: -30px;">
+						<div class="col"><h5 style="margin: 0; font-weight:bold;">Monatliche Rate:</h5></div>
+						<div class="col"><h5 style="margin: 0; font-weight:bold;">{LeasingConditionRateGross}</h5></div>
+						<div class="w-100"></div>
+						<div class="col"><h5 style="margin: 0; font-weight:bold;">Laufzeit:</h5></div>
+						<div class="col"> <h5 style="margin: 0; font-weight:bold;">{leasingConditionMonths} Monate</h5> </div>
+						<div class="w-100"></div>
+						<div class="col"><span style="text-size-adjust: 4px;"> <b> Kaufpreis:  </b> </span> </div>
+						<div class="col"><span style="text-size-adjust: 4px;"> <b>{TotalCredit}</b> </span> </div>
+					  </div>
+					</div>
+					
+				 
+					 
+				    
+			
+
+				<!-- <p style="margin: 0;font-size: 13px;">In Worten: {TotalCreditInWords}</p> -->
+			</div>
+			<div class="col-md-5" align="right">
+				<h5 style="margin: 0; font-weight:bold;">regelbesteuert*</h5>
+				<p style="margin: 0;font-size: 10px;">*MwSt. 19% (={TotalVat})</p>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 5px;">
+			<div class="col-md-12" >
+				<p style="margin-top: 10px; font-size:0.8125rem;">Verbrauch: innerorts {ConsumptionCity} l/100km, außerorts {ConsumptionOutskirts} l/100km, Schnitt {ConsumptionTotal} l/100km, CO2-Emission {Co2Emission} g/km, Effizienzklasse {Co2Efficiency}</p>
+    			<p style="margin-top: 10px; font-size:0.8125rem;"><b>Zahlungsweise + sonstige Vereinbarungen mit Vorrang auf die ausgehändigten Geschäftsbedingungen:</b></p>
+
+    			<br>
+
+    			<p style="font-size:0.8125rem;">{AgreementText2}</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
